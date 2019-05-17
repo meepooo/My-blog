@@ -1,1 +1,12 @@
 20190517
+
+开始第一个js
+
+innerHTML，当前页面交互并更新页面，下面是示例代码：
+
+
+<script>
+function displayDate(){
+	document.getElementById("demo").innerHTML=Date();
+}
+</script>
