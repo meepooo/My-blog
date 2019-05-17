@@ -44,3 +44,174 @@ onsubmit 事件
 名字: <input type="text" name="fname">
 <input type="submit" value="提交">
 </form>
+
+checkValidity()方法，如果 input 元素中的数据是合法的返回 true，否则返回 false。
+
+这个例子限制了 min 和 max：
+
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">验证</button>
+ 
+<p id="demo"></p>
+ 
+<script>
+function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    }
+}
+</script>
+DOM
+
+约束属性
+
+validity 布尔属性值，返回 input 输入值是否合法
+validationMessage 浏览器错误提示信息
+willValidate 指定 input 是否需要验证
+validity属性
+
+customError 设置为 true, 如果设置了自定义的 validity 信息。
+patternMismatch 设置为 true, 如果元素的值不匹配它的模式属性。
+rangeOverflow 设置为 true, 如果元素的值大于设置的最大值。
+rangeUnderflow 设置为 true, 如果元素的值小于它的最小值。
+stepMismatch 设置为 true, 如果元素的值不是按照规定的 step 属性设置。
+tooLong 设置为 true, 如果元素的值超过了 maxLength 属性设置的长度。
+typeMismatch 设置为 true, 如果元素的值不是预期相匹配的类型。
+valueMissing 设置为 true，如果元素 (required 属性) 没有值。
+valid 设置为 true，如果元素的值是合法的。
+this关键字
+
+在 JavaScript 中 this 不是固定不变的，它会随着执行环境的改变而改变。
+
+在方法中，this 表示该方法所属的对象。
+如果单独使用，this 表示全局对象。
+在函数中，this 表示全局对象。
+在函数中，在严格模式下，this 是未定义的(undefined)。
+在事件中，this 表示接收事件的元素。
+类似 call() 和 apply() 方法可以将 this 引用到任何对象。
+json
+
+JSON 字符串转换为 JavaScript 对象：
+
+
+var text = '{ "sites" : [' +
+'{ "name":"Runoob" , "url":"www.runoob.com" },' +
+'{ "name":"Google" , "url":"www.google.com" },' +
+'{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+JSON.parse() 用于将一个 JSON 字符串转换为 JavaScript 对象。
+JSON.stringify() 用于将 JavaScript 值转换为 JSON 字符串。
+javascript:void(0)代表不返回值
+
+
+<a href="javascript:void(0);">点我没有反应的!</a>
+函数实例：
+
+1
+const x = (x, y) => { return x * y };
+js函数
+
+Arguments 对象，函数的参数列表
+
+x = findMax(1, 123, 500, 115, 44, 88);
+ 
+function findMax() {
+    var i, max = arguments[0];
+    
+    if(arguments.length < 2) return max;
+ 
+    for (i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+JavaScript HTML DOM 事件
+
+HTML 事件的例子：
+
+当用户点击鼠标时
+当网页已加载时
+当图像已加载时
+当鼠标移动到元素上时
+当输入字段被改变时
+当提交 HTML 表单时
+当用户触发按键时
+点击事件示例：
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1 onclick="this.innerHTML='Ooops!'">点击文本!</h1>
+</body>
+</html>
+向 button 元素分配 onclick 事件：
+
+<script>
+document.getElementById("myBtn").onclick=function(){displayDate()};
+</script>
+onload事件：
+
+
+<body onload="checkCookies()">
+onchange 事件:onchange 事件常结合对输入字段的验证来使用。
+
+
+<input type="text" id="fname" onchange="upperCase()">
+onmouseover 和 onmouseout 事件：
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+<script>
+function mOver(obj){
+	obj.innerHTML="Thank You"
+}
+function mOut(obj){
+	obj.innerHTML="Mouse Over Me"
+}
+</script>
+
+</body>
+</html>
+事件监听
+
+事件监听列表：
+http://www.runoob.com/jsref/dom-obj-event.html
+
+<script>
+document.getElementById("myBtn").addEventListener("click", displayDate);
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+</script>
+removeEventListener() 方法
+
+<script>
+document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+function myFunction() {
+    document.getElementById("demo").innerHTML = Math.random();
+}
+function removeHandler() {
+    document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+}
+</script>
+createElement与createTextNode
+
+
+
+<script>
+var para = document.createElement("p");
+var node = document.createTextNode("这是一个新的段落。");
+para.appendChild(node);
+ 
+var element = document.getElementById("div1");
+element.appendChild(para);
+</script>
