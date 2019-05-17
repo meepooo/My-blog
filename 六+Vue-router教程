@@ -9,20 +9,17 @@ Vue-router quick start
 
 2.定义路由组件
 
-1
-2
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
+
 3.创建路由 router
 
-1
-2
-3
-4
+
 const routes = [
 			  { path: '/foo', component: Foo },
 			  { path: '/bar', component: Bar }
 			]
+
 4.创建 router 实例，然后传 routes 配置
 
 其中，routes: routes 可以缩写成 routes
