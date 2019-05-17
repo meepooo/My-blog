@@ -10,3 +10,37 @@ function displayDate(){
 	document.getElementById("demo").innerHTML=Date();
 }
 </script>
+
+对象
+
+var person = {
+firstName:”John”,
+lastName:”Doe”,
+age:50,
+eyeColor:”blue”
+};
+
+对象的使用
+person.lastName;
+或者 person[“lastName”];
+
+常见的HTML事件的列表：
+
+onchange HTML 元素改变
+onclick 用户点击 HTML 元素
+onmouseover 用户在一个HTML元素上移动鼠标
+onmouseout 用户从一个HTML元素上移开鼠标
+onkeydown 用户按下键盘按键
+onload 浏览器已完成页面的加载
+
+示例：
+
+<button onclick="displayDate()">现在的时间是?</button>
+html表单验证
+
+onsubmit 事件
+
+<form name="myForm" action="demo_form.php" onsubmit="return validateForm()" method="post">
+名字: <input type="text" name="fname">
+<input type="submit" value="提交">
+</form>
